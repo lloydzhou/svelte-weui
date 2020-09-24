@@ -17,12 +17,25 @@
   <weui-picker groups='[{"items": [{"label": "Item1"}, {"label": "Item2", "disabled": 1}]}]'>
     <button>click to open picker</button>
   </weui-picker>
+  <weui-city-picker>
+    <button>click to open city picker</button>
+  </weui-city-picker>
   <script>
     customElements.whenDefined('weui-picker').then(function(){
       var picker = document.querySelector('weui-picker')
       console.log('whenDefined weui-picker', picker)
       picker.groups = [{"items": [{"label": "Item1"}, {"label": "Item2", "disabled": 0}, {"label": "Item3"}, {"label": "Item4"}, {"label": "Item5"}], defaultIndex: 2}, {"items": [{"label": "1"}, {"label": 2}]}]
       picker.selected = [3, 1]
+      picker.addEventListener('change', function(e){
+        console.log(e.detail)
+      })
+    })
+    customElements.whenDefined('weui-city-picker').then(function(){
+      var picker = document.querySelector('weui-city-picker')
+      console.log('whenDefined weui-city-picker', picker)
+      picker.addEventListener('change', function(e) {
+        console.log('weui-city-picker onChange', e.detail)
+      })
     })
   </script>
 </body>
