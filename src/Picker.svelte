@@ -155,6 +155,9 @@
         adjustPosition(props, state, content)
       },
       destroy() {
+        node.removeEventListener('touchstart', touchStartHandler, false)
+        node.removeEventListener('touchmove', touchMoveHandler, false)
+        node.removeEventListener('touchend', touchEndHandler, false)
       }
     }
   }
