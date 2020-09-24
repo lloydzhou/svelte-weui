@@ -64,7 +64,7 @@
   }
 
   function groupchange(e) {
-    console.log('groupchange', e.detail, root)
+    // console.debug('groupchange', e.detail, root)
     const { groupIndex, item, selected } = e.detail
     if (selected >= 0 && groupIndex == 0 && province != item.label) {
       province = item.label

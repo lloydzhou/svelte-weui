@@ -141,7 +141,7 @@
     }
 
     adjustPosition()
-    //console.log('use touch', node, props, state, content)
+    // console.log('use touch', node, props, state, content)
     const touchStartHandler = handleTouchStart.bind(node)
     const touchMoveHandler = handleTouchMove.bind(node)
     const touchEndHandler = handleTouchEnd.bind(node)
@@ -150,7 +150,7 @@
     node.addEventListener('touchend', touchEndHandler, false)
     return {
       update(group) {
-        //console.log('use touch update', group)
+        // console.log('use touch update', group)
         Object.assign(props, group)
         adjustPosition(props, state, content)
       },
@@ -179,30 +179,30 @@
   // picker function
 
   root.$on('groupchange', function(e) {
-    console.debug('onGroupChange', e.detail)
+    // console.debug('onGroupChange', e.detail)
     const { item, selected: index, groupIndex } = e.detail
     selected[groupIndex] = index
     root.dispatchEvent(e)
   })
 
   root.$on('cancel', function(e) {
-    console.debug('onCancel', e.detail)
+    // console.debug('onCancel', e.detail)
     root.dispatchEvent(e)
   })
 
   root.$on('change', function(e) {
-    console.debug('onChange', e.detail)
+    // console.debug('onChange', e.detail)
     root.dispatchEvent(e)
   })
 
   root.$on('close', function(e) {
-    console.debug('onClose', e.detail)
+    // console.debug('onClose', e.detail)
     show = false
     root.dispatchEvent(e)
   })
 
   root.$on('open', function(e) {
-    console.log('onOpen', e.detail)
+    // console.log('onOpen', e.detail)
     show = true
     root.dispatchEvent(e)
   })
