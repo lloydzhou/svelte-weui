@@ -2,7 +2,6 @@
 
 <script>
   import { onMount } from 'svelte'
-  export let groups = [{items: []}, {items: []}, {items: []}]
   export let show = false
   export let cancelBtn = '取消'
   export let okBtn = '确定'
@@ -12,6 +11,7 @@
 
   let root = arguments[0]
   let level = []
+  let groups = [{items: []}, {items: []}, {items: []}]
 
   onMount(() => {
     fetch('https://unpkg.com/province-city-china/dist/level.json').then(res => res.json()).then(data => {
