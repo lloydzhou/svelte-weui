@@ -19,14 +19,6 @@
     })
   })
 
-  function index(items, name) {
-    for (const index in items) {
-      if (items[index].label == name) {
-        return index
-      }
-    }
-    return -1
-  }
   $: {
     // groupIndex: 0
     // console.log('province', province)
@@ -61,6 +53,15 @@
         // console.log('area', index2, area)
       }
     }
+  }
+
+  function index(items, name) {
+    for (const index in items) {
+      if (items[index].label == name) {
+        return index
+      }
+    }
+    return -1
   }
 
   function groupchange(e) {
