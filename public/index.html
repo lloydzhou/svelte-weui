@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>weui</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+
+	<script async src='/build/tag.js'></script>
+</head>
+
+<body>
+  <br />
+  <weui-picker groups='[{"items": [{"label": "Item1"}, {"label": "Item2", "disabled": 1}]}]'>
+    <button>click to open picker</button>
+  </weui-picker>
+  <script>
+    customElements.whenDefined('weui-picker').then(function(){
+      var picker = document.querySelector('weui-picker')
+      console.log('whenDefined weui-picker', picker)
+      picker.groups = [{"items": [{"label": "Item1"}, {"label": "Item2", "disabled": 0}, {"label": "Item3"}, {"label": "Item4"}, {"label": "Item5"}], defaultIndex: 2}, {"items": [{"label": "1"}, {"label": 2}]}]
+      picker.selected = [3, 1]
+    })
+  </script>
+</body>
+</html>
