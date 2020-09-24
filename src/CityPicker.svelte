@@ -83,9 +83,9 @@
   }
 
   function custom_event(type, detail) {
-      const e = document.createEvent('CustomEvent');
-      e.initCustomEvent(type, false, false, detail);
-      return e;
+    const e = document.createEvent('CustomEvent');
+    e.initCustomEvent(type, false, false, detail);
+    return e;
   }
 
 
